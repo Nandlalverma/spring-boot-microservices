@@ -58,5 +58,12 @@ public class RatingController {
         List<Rating> ratingByHotelId = ratingService.getRatingByHotelId(hotelId);
         return ResponseEntity.ok(ratingByHotelId);
     }
+    
+    @GetMapping("/login")
+    public ResponseEntity<String> login(@RequestBody String login){
+    	ratingService.getRatingById(login);
+    	return new ResponseEntity<>("Login successfully !",HttpStatus.OK);
+    }
+    
 
 }
